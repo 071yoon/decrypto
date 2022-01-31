@@ -1,5 +1,6 @@
 import styled from "styled-components"
 import React, { useState } from "react"
+import { Link } from 'react-router-dom'
 import useInput from './Hooks/useInput';
 
 
@@ -21,7 +22,9 @@ export default function Login() {
                 </InputContainer>
                 <ButtonContainer>
                     <EntryButton disabled={!nickname.length}>방 만들기</EntryButton>
-                    <EntryButton disabled={!(nickname.length && roomNumber.length)}>참가하기</EntryButton>
+                    <Link to="/lobby">
+                        <EntryButton disabled={!(nickname.length && roomNumber.length)}>참가하기</EntryButton>
+                    </Link>
                 </ButtonContainer>
             </Form>
         </Container>
